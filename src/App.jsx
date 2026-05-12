@@ -25,6 +25,12 @@ const research = [
   ['Demographic Pluralism in Safety', 'Findings of EACL 2026', 'A 43K benchmark across 14 safety domains for pluralistic LLM safety.'],
 ];
 
+const photos = [
+  ['/photos/image_1.jpg', 'Portrait mode', 'The person behind the papers.'],
+  ['/photos/image_2.jpg', 'Daily signal', 'Research life, between builds and benchmarks.'],
+  ['/photos/image_3.jpg', 'Off the clock', 'Football, motion, and a reset after the models.'],
+];
+
 const skills = ['LLM Optimization', 'AI Safety', 'Edge AI', 'RAG Systems', 'Multimodal Fusion', 'Deepfake Detection', 'PyTorch', 'Hugging Face', 'FastAPI', 'Docker'];
 
 function ParticleField() {
@@ -123,6 +129,7 @@ export default function App() {
         <nav>
           <a href="#projects">Projects</a>
           <a href="#research">Research</a>
+          <a href="#gallery">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
         <a className="pill" href={links.email}>Email</a>
@@ -140,6 +147,10 @@ export default function App() {
             </div>
           </div>
           <aside className="console">
+            <div className="hero-photo">
+              <img src="/photos/image_1.jpg" alt="Ebad Shabbir portrait" />
+              <div><small>Current node</small><strong>MBZUAI Visiting Student</strong></div>
+            </div>
             <p><b>current.role</b> = "Visiting Student at MBZUAI"</p>
             <p><b>model.focus</b> = ["LLM Optimization", "AI Safety", "Multimodal Fusion"]</p>
             <p><b>deployment.target</b> = "edge hardware + real-world constraints"</p>
@@ -167,6 +178,14 @@ export default function App() {
           <h2>Efficient LLMs, AI safety, and multimodal reasoning.</h2>
           <div className="research-list">
             {research.map(([title, venue, text], i) => <article className="paper" key={title}><b>{String(i + 1).padStart(2, '0')}</b><div><small>{venue}</small><h3>{title}</h3><p>{text}</p></div></article>)}
+          </div>
+        </section>
+
+        <section id="gallery" className="section">
+          <p className="eyebrow">Gallery</p>
+          <h2>A little life around the work.</h2>
+          <div className="photo-grid">
+            {photos.map(([src, label, text]) => <article className="photo-card" key={src}><img src={src} alt={label} /><div><small>{label}</small><p>{text}</p></div></article>)}
           </div>
         </section>
 
